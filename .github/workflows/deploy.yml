@@ -2,7 +2,7 @@ name: Commit to GitHub
 
 on:
   workflow_run:
-    workflows: ["Your Workflow Name"] # Nome do seu Workflow no Logic Apps
+    workflows: ["Logic Apps Save Workflow"]
     types:
       - completed
 

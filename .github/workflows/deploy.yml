@@ -1,0 +1,23 @@
+name: Commit to GitHub
+
+on:
+  workflow_run:
+    workflows: ["Your Workflow Name"] # Nome do seu Workflow no Logic Apps
+    types:
+      - completed
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "Erik"
+          git config user.email "erik.badaro@mhs.com"
+          git add .
+          git commit -m "Automatic Commit: Changes in the Logic App"
+          git push origin main # Ou a branch que desejar
